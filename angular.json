@@ -15,7 +15,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/dui-lib/ng-package.json"
+            "project": "projects/dui-lib/ng-package.json",
+            "tsConfig": "projects/dui-lib/tsconfig.lib.prod.json"
           },
           "configurations": {
             "production": {
