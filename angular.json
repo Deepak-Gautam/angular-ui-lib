@@ -1,7 +1,42 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "8a68fd1a-1252-4eb0-b81e-60cde5e564cb"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "dui-lib": {
+      "projectType": "library",
+      "root": "projects/dui-lib",
+      "sourceRoot": "projects/dui-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/dui-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dui-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/dui-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dui-lib/src/test.ts",
+            "tsConfig": "projects/dui-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/dui-lib/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "dui-lib"
 }
