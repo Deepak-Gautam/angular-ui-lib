@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "8a68fd1a-1252-4eb0-b81e-60cde5e564cb"
+    "analytics": "8a68fd1a-1252-4eb0-b81e-60cde5e564cb",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -34,6 +37,15 @@
             "main": "projects/dui-lib/src/test.ts",
             "tsConfig": "projects/dui-lib/tsconfig.spec.json",
             "karmaConfig": "projects/dui-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/dui-lib/**/*.ts",
+              "projects/dui-lib/**/*.html"
+            ]
           }
         }
       }
