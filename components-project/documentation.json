@@ -1,0 +1,471 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "file": "stories/User.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {}\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "DuiLibService",
+            "id": "injectable-DuiLibService-b7e0fdc6c0dee35ed75221daaa313031e2824fefc926cbc073e242c18c03dd620fb2193e1ced2a407c87db7b5478c8b445e311854da7f7c8c69b66e5f24178e7",
+            "file": "projects/dui-lib/src/lib/dui-lib.service.ts",
+            "properties": [],
+            "methods": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from \"@angular/core\";\n\n@Injectable({\n  providedIn: \"root\",\n})\nexport class DuiLibService {}\n",
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-27a64a24053aa3e9d24d1fb0967afbb5c695de47100381a72e9048d63ce451f730cf2324a4b421589d503bc96da4c812241e029ec478d90120ee56637d6befa4",
+            "file": "projects/dui-lib/src/lib/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "[lib-button]",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "ButtonSize",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "ButtonType",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'click'"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [
+                {
+                    "name": "click",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, ElementRef, HostBinding, HostListener, Input } from '@angular/core';\nimport { LIB_BUTTON_SIZE, LIB_BUTTON_TYPE } from './button.base';\n\nexport type ButtonType = 'default' | 'primary' | 'secondary' | 'outlined' | 'animated';\nexport type ButtonSize = 'sm-x' | 'sm-xx' | 'sm' | 'md' | 'large' | 'large-x' | 'large-xx';\n\n@Component({\n  standalone: true,\n  imports: [CommonModule],\n  // eslint-disable-next-line @angular-eslint/component-selector\n  selector: '[lib-button]',\n  template: `<ng-content></ng-content>`,\n  styleUrls: ['./button.component.scss'],\n  // host: {\n  //   ...LIB_BUTTON_SIZE,\n  //   ...LIB_BUTTON_TYPE,\n  // },\n})\nexport class ButtonComponent {\n  @Input() variant: ButtonType = 'default';\n  @Input() size: ButtonSize = 'md';\n  @Input() icon = '';\n\n  @HostBinding('class.disabled')\n  @Input()\n  disabled = false;\n\n  constructor(private elementRef: ElementRef) {}\n\n  @HostListener('click') onClick() {\n    this.elementRef.nativeElement.blur();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 27,
+                "jsdoctags": [
+                    {
+                        "name": "elementRef",
+                        "type": "ElementRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "DuiLibComponent",
+            "id": "component-DuiLibComponent-8b616f87047ea2e2b542790b4d8ba58ab701aaaf50e4bcb01e3981dad7940acfb2179b75addfcf4ba6561b1c7a18554991ceec7ab91dd61adf15673cd41de5c5",
+            "file": "projects/dui-lib/src/lib/dui-lib.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-dui-lib",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p>dui-lib works!</p>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\n\n@Component({\n  selector: \"lib-dui-lib\",\n  template: ` <p>dui-lib works!</p> `,\n  styles: [],\n})\nexport class DuiLibComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
+        }
+    ],
+    "modules": [
+        {
+            "name": "DuiLibModule",
+            "id": "module-DuiLibModule-b128414612c8d70fe838d08b49114a0ac1a7081d834a956843186f55f0e14e2a547b69a9f7723820c0f1524816effe90361d19d402e43257e90caa404c61034c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/dui-lib/src/lib/dui-lib.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { DuiLibComponent } from './dui-lib.component';\nimport { ButtonComponent } from './button/button.component';\n\n@NgModule({\n  declarations: [DuiLibComponent],\n  imports: [ButtonComponent],\n  exports: [DuiLibComponent],\n})\nexport class DuiLibModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "DuiLibComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "ButtonComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "DuiLibComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/dui-lib/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "LIB_BUTTON_SIZE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/dui-lib/src/lib/button/button.base.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  '[class.sm-x]': 'size === \"sm-x\"',\r\n  '[class.sm-xx]': 'size === \"sm-xx\"',\r\n  '[class.sm]': 'size === \"sm\"',\r\n  '[class.md]': 'size === \"md\"',\r\n  '[class.large]': 'size === \"large\"',\r\n  '[class.large-x]': 'size === \"large-x\"',\r\n  '[class.large-xx]': 'size === \"large-xx\"',\r\n}"
+            },
+            {
+                "name": "LIB_BUTTON_TYPE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/dui-lib/src/lib/button/button.base.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  '[class.default]': 'variant ===\"default\" ',\r\n  '[class.primary]': 'variant === \"primary\"',\r\n  '[class.secondary]': 'variant === \"secondary\"',\r\n  '[class.outlined]': 'variant === \"outlined\"',\r\n  '[class.animated]': 'variant === animated',\r\n}"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/dui-lib/src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "ButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"sm-x\" | \"sm-xx\" | \"sm\" | \"md\" | \"large\" | \"large-x\" | \"large-xx\"",
+                "file": "projects/dui-lib/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            },
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"default\" | \"primary\" | \"secondary\" | \"outlined\" | \"animated\"",
+                "file": "projects/dui-lib/src/lib/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 186
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/dui-lib/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/dui-lib/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/dui-lib/src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "projects/dui-lib/src/lib/button/button.base.ts": [
+                {
+                    "name": "LIB_BUTTON_SIZE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/dui-lib/src/lib/button/button.base.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  '[class.sm-x]': 'size === \"sm-x\"',\r\n  '[class.sm-xx]': 'size === \"sm-xx\"',\r\n  '[class.sm]': 'size === \"sm\"',\r\n  '[class.md]': 'size === \"md\"',\r\n  '[class.large]': 'size === \"large\"',\r\n  '[class.large-x]': 'size === \"large-x\"',\r\n  '[class.large-xx]': 'size === \"large-xx\"',\r\n}"
+                },
+                {
+                    "name": "LIB_BUTTON_TYPE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/dui-lib/src/lib/button/button.base.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  '[class.default]': 'variant ===\"default\" ',\r\n  '[class.primary]': 'variant === \"primary\"',\r\n  '[class.secondary]': 'variant === \"secondary\"',\r\n  '[class.outlined]': 'variant === \"outlined\"',\r\n  '[class.animated]': 'variant === animated',\r\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/dui-lib/src/lib/button/button.component.ts": [
+                {
+                    "name": "ButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"sm-x\" | \"sm-xx\" | \"sm\" | \"md\" | \"large\" | \"large-x\" | \"large-xx\"",
+                    "file": "projects/dui-lib/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                },
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"default\" | \"primary\" | \"secondary\" | \"outlined\" | \"animated\"",
+                    "file": "projects/dui-lib/src/lib/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 186
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/dui-lib/src/lib/button/button.base.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LIB_BUTTON_SIZE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/dui-lib/src/lib/button/button.base.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LIB_BUTTON_TYPE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/dui-lib/src/lib/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/dui-lib/src/lib/dui-lib.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DuiLibComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/dui-lib/src/lib/dui-lib.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "DuiLibService",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/dui-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/dui-lib/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/User.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
